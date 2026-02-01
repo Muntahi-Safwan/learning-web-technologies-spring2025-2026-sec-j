@@ -1,0 +1,8 @@
+1. Created a Github Repository for this semester
+2. Cloned the repository locally
+3. created a test txt file
+4. Created a folder named "lab 0"
+5. Moved the test.txt file to lab 0 folder
+6. Pushed the file on github
+5. created a table of student info in html on folder "lab 0"
+6. pushed the html file on github
