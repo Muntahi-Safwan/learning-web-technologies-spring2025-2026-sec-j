@@ -1,15 +1,38 @@
 <students>
     <student>
-        <serial sr="a">23</serial>
+        <serialNo sr="a">23</serialNo>
         <name>
             <firstName>John</firstName>
             <lastName>Carter</lastName>
         </name>
         <addmissionDate>
-            <date>3</date>
-            <month>20</month>
-            <year>2023</year>
+            <date>25</date>
+            <month>12</month>
+            <year>2015</year>
         </addmissionDate>
     </student>
-
+    <student>
+        <serialNo sr="b">29</serialNo>
+        <name>
+            <firstName>Bob</firstName>
+            <lastName>Marshal</lastName>
+        </name>
+        <addmissionDate>
+            <date>13</date>
+            <month>1</month>
+            <year>1999</year>
+        </addmissionDate>
+    </student>
+    <student>
+        <serialNo sr="c">35</serialNo>
+        <name>
+            <firstName>Clark</firstName>
+            <lastName>Kent</lastName>
+        </name>
+        <addmissionDate>
+            <date>17</date>
+            <month>6</month>
+            <year>2005</year>
+        </addmissionDate>
+    </student>
 </students>
