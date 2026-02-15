@@ -1,0 +1,15 @@
+<students>
+    <student>
+        <serial sr="a">23</serial>
+        <name>
+            <firstName>John</firstName>
+            <lastName>Carter</lastName>
+        </name>
+        <addmissionDate>
+            <date>3</date>
+            <month>20</month>
+            <year>2023</year>
+        </addmissionDate>
+    </student>
+
+</students>
