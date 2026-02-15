@@ -6,7 +6,7 @@
             <lastName>Doe</lastName>
         </name>
         <address>
-            <flat />
+            <flat></flat>
             <house>38</house>
             <road>3</road>
             <area>Banani</area>
@@ -38,7 +38,7 @@
             <lastName>Voski</lastName>
         </name>
         <address>
-            <flat />
+            <flat></flat>
             <house>38</house>
             <road>3</road>
             <area>Motijheel</area>
