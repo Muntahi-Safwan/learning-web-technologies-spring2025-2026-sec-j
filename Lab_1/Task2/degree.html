@@ -1,25 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Degree</title>
-  </head>
-  <body>
-    <form>
-      <fieldset style="width: 200px">
-        <legend>Degree</legend>
-        <input type="checkbox" name="degree" value="SSC" />
-        <label for="ssc">SSC</label>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Degree</title>
+    </head>
+    <body>
+        <form onsubmit="return validateDegree();">
+            <fieldset style="width: 200px">
+                <legend>Degree</legend>
+                <input type="checkbox" name="degree" value="SSC" />
+                <label for="ssc">SSC</label>
 
-        <input type="checkbox" name="degree" value="HSC" />
-        <label for="hsc">HSC</label>
+                <input type="checkbox" name="degree" value="HSC" />
+                <label for="hsc">HSC</label>
 
-        <input type="checkbox" name="degree" value="BSc" />
-        <label for="bsc">BSc</label>
-      </fieldset>
-      <br />
-      <input type="submit" value="Submit" />
-    </form>
-  </body>
+                <input type="checkbox" name="degree" value="BSc" />
+                <label for="bsc">BSc</label>
+            </fieldset>
+            <br />
+            <input type="submit" value="Submit" />
+        </form>
+        <script src="validation.js"></script>
+    </body>
 </html>

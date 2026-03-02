@@ -1,37 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Picture</title>
-  </head>
-  <body>
-    <form>
-      <fieldset style="width: 300px">
-        <legend>Profile Picture</legend>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile Picture</title>
+    </head>
+    <body>
+        <form onsubmit="return validateProfile();">
+            <fieldset style="width: 300px">
+                <legend>Profile Picture</legend>
 
-        <label for="userid">User Id</label>
-        <input
-          type="text"
-          id="userid"
-          name="userid"
-          style="margin-left: 10px"
-        /><br />
+                <label for="userid">User Id</label>
+                <input
+                    type="text"
+                    id="userid"
+                    name="userid"
+                    style="margin-left: 10px"
+                /><br />
 
-        <label for="picture">Picture</label>
-        <input
-          type="file"
-          id="picture"
-          title="Browse"
-          name="picture"
-          style="margin-left: 10px"
-        />
+                <label for="picture">Picture</label>
+                <input
+                    type="file"
+                    id="picture"
+                    title="Browse"
+                    name="picture"
+                    style="margin-left: 10px"
+                />
 
-        <hr />
-        <br />
+                <hr />
+                <br />
 
-        <input type="submit" value="Submit" />
-      </fieldset>
-    </form>
-  </body>
+                <input type="submit" value="Submit" />
+            </fieldset>
+        </form>
+
+        <script src="validation.js"></script>
+    </body>
 </html>
