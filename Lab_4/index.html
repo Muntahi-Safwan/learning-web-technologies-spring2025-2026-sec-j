@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Product Management</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>Product Management</h1>
+            <p>Per Unit Cost: $10</p>
+            <div class="d1">
+                <p>Number of Units:</p>
+                <input
+                    type="number"
+                    id="input"
+                    value=""
+                    oninput="return priceCalculate();"
+                />
+            </div>
+            <div class="d2">
+                <p>Total Cost:</p>
+                <input type="number" id="total-cost" readonly value="" />
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
