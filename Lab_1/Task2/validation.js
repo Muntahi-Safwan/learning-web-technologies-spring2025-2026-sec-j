@@ -1,3 +1,6 @@
+let a = "mahfi";
+let b = a.split("").reverse().join("");
+console.log(b);
 // Email Validation
 function validateEmail() {
   const emailInput = document.getElementById("email").value.trim();
@@ -12,6 +15,12 @@ function validateEmail() {
     return false;
   }
   return true;
+}
+
+function name() {
+  let a = "mahfi";
+  let b = a.split("").reverse().join("");
+  console.log(b);
 }
 
 // Name Validation
