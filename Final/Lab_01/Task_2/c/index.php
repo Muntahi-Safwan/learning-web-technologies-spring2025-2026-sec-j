@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task 1: B</title>
+    <title>Task 2: C</title>
     <style>
       fieldset {
         width: 100px;
@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <h1>Task 1: B</h1>
+    <h1>Task 2: C</h1>
     <form action="" method="post">
       <fieldset>
         <legend>Email</legend>
