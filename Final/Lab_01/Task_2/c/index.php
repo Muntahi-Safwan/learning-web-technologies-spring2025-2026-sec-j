@@ -1,10 +1,10 @@
 <?php 
-    if(isset($_POST["name"])) {
-        $name = $_REQUEST['name'];
-        if(!empty($name)){
-            echo "Hello, $name! Welcome";
+    if(isset($_POST["email"])) {
+        $email = $_REQUEST['email'];
+        if(!empty($email)){
+            echo "Hello, $email! Welcome";
         } else {
-            echo "Please enter your name.";
+            echo "Please enter your email.";
         }
 
     }
@@ -26,8 +26,9 @@
     <h1>Task 1: B</h1>
     <form action="" method="post">
       <fieldset>
-        <legend>Name</legend>
-        <input type="text" id="name" name="name" value="<?php if(isset($_POST['name'])) { echo $_POST['name']; } ?>" />
+        <legend>Email</legend>
+        <input type="email" id="email" name="email" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>" />
+        <span title="hint: sample@example.com">i</span>
         <hr />
         <button type="submit">Submit</button>
       </fieldset>
