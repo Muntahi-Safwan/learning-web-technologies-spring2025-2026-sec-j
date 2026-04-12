@@ -27,7 +27,7 @@
     <form action="" method="post">
       <fieldset>
         <legend>Name</legend>
-        <input type="text" id="name" name="name" value="" />
+        <input type="text" id="name" name="name" value="<?php if(isset($_POST['name'])) { echo $_POST['name']; } ?>" />
         <hr />
         <button type="submit">Submit</button>
       </fieldset>
