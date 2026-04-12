@@ -1,7 +1,7 @@
 <?php 
     if(isset($_POST["gender"])) {
         $gender = $_REQUEST['gender'];
-        if(!empty($gender)){
+        if($gender != '') {
             echo "Hello, $gender!";
         } else {
             echo "Please enter your gender.";
