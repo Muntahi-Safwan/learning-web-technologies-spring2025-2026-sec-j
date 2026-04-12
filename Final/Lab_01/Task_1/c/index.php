@@ -2,7 +2,7 @@
     if(isset($_POST["name"])) {
         $name = $_REQUEST['name'];
         if(!empty($name)){
-            echo "Hello, $name!";
+            echo "Hello, $name! Welcome";
         } else {
             echo "Please enter your name.";
         }
