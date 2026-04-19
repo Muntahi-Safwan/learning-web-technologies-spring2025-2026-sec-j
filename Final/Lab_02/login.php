@@ -11,6 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$registeredPassword = $_SESSION['registration']['password'] ?? '';
 
 	if ($inputUsername === $registeredUsername && $inputPassword === $registeredPassword && $registeredUsername !== '') {
+		$expireTime = time() + 600;
+		setcookie('user_name', $_SESSION['registration']['name'] ?? '', $expireTime, '/');
+		setcookie('user_email', $_SESSION['registration']['email'] ?? '', $expireTime, '/');
+		setcookie('user_username', $_SESSION['registration']['username'] ?? '', $expireTime, '/');
+		setcookie('user_password', $_SESSION['registration']['password'] ?? '', $expireTime, '/');
+		setcookie('user_confirm_password', $_SESSION['registration']['confirm_password'] ?? '', $expireTime, '/');
+		setcookie('user_gender', $_SESSION['registration']['gender'] ?? '', $expireTime, '/');
+		setcookie('user_day', $_SESSION['registration']['day'] ?? '', $expireTime, '/');
+		setcookie('user_month', $_SESSION['registration']['month'] ?? '', $expireTime, '/');
+		setcookie('user_year', $_SESSION['registration']['year'] ?? '', $expireTime, '/');
 		setcookie('status', 'logged_in', time() + 600, '/');
 		header('Location: dashboard/dashboard.php');
 		exit;
