@@ -1,3 +1,38 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['registration'])) {
+	$_SESSION['registration'] = [
+		'name' => '',
+		'email' => '',
+		'username' => '',
+		'password' => '',
+		'confirm_password' => '',
+		'gender' => '',
+		'day' => '',
+		'month' => '',
+		'year' => ''
+	];
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$_SESSION['registration'] = [
+		'name' => trim($_POST['name'] ?? ''),
+		'email' => trim($_POST['email'] ?? ''),
+		'username' => trim($_POST['username'] ?? ''),
+		'password' => $_POST['password'] ?? '',
+		'confirm_password' => $_POST['confirm_password'] ?? '',
+		'gender' => $_POST['gender'] ?? '',
+		'day' => trim($_POST['day'] ?? ''),
+		'month' => trim($_POST['month'] ?? ''),
+		'year' => trim($_POST['year'] ?? '')
+	];
+
+	header('Location: login.php');
+	exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +96,7 @@
 		}
 
 		.row {
-			font-size: 39px;
+			font-size: 20px;
 			margin: 8px 0;
 		}
 
@@ -98,12 +133,12 @@
 		}
 
 		.mini-box legend {
-			font-size: 38px;
+			font-size: 28px;
 			padding: 0 4px;
 		}
 
 		.gender {
-			font-size: 40px;
+			font-size: 28px;
 		}
 
 		.gender input {
@@ -131,14 +166,14 @@
 		}
 
 		.actions input {
-			font-size: 30px;
+			font-size: 24px;
 			padding: 4px 8px;
 		}
 
 		.footer {
 			text-align: center;
 			padding: 14px;
-			font-size: 44px;
+			font-size: 28px;
 		}
 	</style>
 </head>
@@ -160,39 +195,39 @@
 
 					<div class="row">
 						<label for="name">Name</label>:
-						<input type="text" id="name" name="name">
+						<input type="text" id="name" name="name" required>
 					</div>
 					<hr class="line">
 
 					<div class="row">
 						<label for="email">Email</label>:
-						<input type="email" id="email" name="email">
+						<input type="email" id="email" name="email" required>
 						<span class="hint">i</span>
 					</div>
 					<hr class="line">
 
 					<div class="row">
 						<label for="username">User Name</label>:
-						<input type="text" id="username" name="username">
+						<input type="text" id="username" name="username" required>
 					</div>
 					<hr class="line">
 
 					<div class="row">
 						<label for="password">Password</label>:
-						<input type="password" id="password" name="password">
+						<input type="password" id="password" name="password" required>
 					</div>
 					<hr class="line">
 
 					<div class="row">
 						<label for="confirm_password">Confirm Password</label>:
-						<input type="password" id="confirm_password" name="confirm_password">
+						<input type="password" id="confirm_password" name="confirm_password" required>
 					</div>
 					<hr class="line">
 
 					<fieldset class="mini-box">
 						<legend>Gender</legend>
 						<div class="gender">
-							<label><input type="radio" name="gender" value="Male"> Male</label>
+							<label><input type="radio" name="gender" value="Male" required> Male</label>
 							<label><input type="radio" name="gender" value="Female"> Female</label>
 							<label><input type="radio" name="gender" value="Other"> Other</label>
 						</div>
@@ -201,9 +236,9 @@
 					<fieldset class="mini-box">
 						<legend>Date of Birth</legend>
 						<div class="dob">
-							<input type="text" name="day" maxlength="2"> /
-							<input type="text" name="month" maxlength="2"> /
-							<input type="text" name="year" maxlength="4">
+							<input type="text" name="day" maxlength="2" required> /
+							<input type="text" name="month" maxlength="2" required> /
+							<input type="text" name="year" maxlength="4" required>
 							<span class="format">(dd/mm/yyyy)</span>
 						</div>
 					</fieldset>
