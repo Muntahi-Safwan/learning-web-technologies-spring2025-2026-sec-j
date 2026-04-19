@@ -57,7 +57,7 @@
 		.footer {
 			text-align: center;
 			padding: 18px;
-			font-size: 44px;
+			font-size: 28px;
 		}
 	</style>
 </head>
@@ -73,7 +73,6 @@
 				<a href="registration.php">Registration</a>
 			</div>
 		</div>
-
 		<div class="content">
 			<h1>Welcome to xCompany</h1>
 		</div>

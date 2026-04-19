@@ -1,3 +1,25 @@
+<?php
+session_start();
+
+$errorMessage = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$inputUsername = trim($_POST['username'] ?? '');
+	$inputPassword = $_POST['password'] ?? '';
+
+	$registeredUsername = $_SESSION['registration']['username'] ?? '';
+	$registeredPassword = $_SESSION['registration']['password'] ?? '';
+
+	if ($inputUsername === $registeredUsername && $inputPassword === $registeredPassword && $registeredUsername !== '') {
+		setcookie('status', 'logged_in', time() + 600, '/');
+		header('Location: dashboard/dashboard.php');
+		exit;
+	}
+
+	$errorMessage = 'Invalid username or password.';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +86,7 @@
 
 		.form-row {
 			margin: 10px 0;
-			font-size: 40px;
+			font-size: 24px;
 		}
 
 		.form-row input[type="text"],
@@ -106,6 +128,13 @@
 			vertical-align: middle;
 		}
 
+		.message {
+			width: 560px;
+			margin: 0 auto 14px;
+			font-size: 22px;
+			color: #b00020;
+		}
+
 		.footer {
 			text-align: center;
 			padding: 14px;
@@ -114,6 +143,8 @@
 	</style>
 </head>
 <body>
+	
+
 	<div class="wrapper">
 		<div class="header">
 			<div><span class="brand">X</span><span class="brand-text">Company</span></div>
@@ -125,18 +156,22 @@
 		</div>
 
 		<div class="content">
-			<form method="post" action="dashboard/">
+			<?php if ($errorMessage !== ''): ?>
+				<div class="message"><?php echo htmlspecialchars($errorMessage); ?></div>
+			<?php endif; ?>
+
+			<form method="post" action="">
 				<fieldset class="login-box">
 					<legend>LOGIN</legend>
 
 					<div class="form-row">
 						<label for="username">User Name : </label>
-						<input type="text" id="username" name="username">
+						<input type="text" id="username" name="username" required>
 					</div>
 
 					<div class="form-row">
 						<label for="password">Password&nbsp;&nbsp;&nbsp;: </label>
-						<input type="password" id="password" name="password">
+						<input type="password" id="password" name="password" required>
 					</div>
 
 					<hr>
