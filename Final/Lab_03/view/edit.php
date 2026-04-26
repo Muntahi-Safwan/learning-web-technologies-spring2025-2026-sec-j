@@ -1,8 +1,12 @@
 <?php
     session_start();
+    if (!isset($_SESSION["user"]) || !isset($_SESSION["status"]) || $_SESSION["status"] !== true) {
+    header("Location: login.php");
+    exit;
+    }
     $id = $_GET['id'];
-    $products = $_SESSION['products'];
-    $product= [];
+    $products = $_SESSION['products'] ?? [];
+    $product = $products[$id] ?? null;
     foreach($products as $p){
         if($p['id'] == $id){
             $product = $p;
@@ -23,7 +27,7 @@
         <br>
 
         <form method="post" action="../controller/editProduct.php" enctype="multipart/form-data">
-            ID:             <input type="text" name="id" value="<?=$product['id']?>"/> <br>
+            ID:             <input type="text" name="id" value="<?=$product['id']?>" readonly/> <br>
             Name:           <input type="text" name="name" value="<?=$product['name']?>"/> <br>
             Description:    <input type="text" name="description" value="<?=$product['description']?>"/> <br>
             Price:          <input type="text" name="price" value="<?=$product['price']?>"/> <br>
