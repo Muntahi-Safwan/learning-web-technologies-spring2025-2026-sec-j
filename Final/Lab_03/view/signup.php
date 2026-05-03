@@ -3,14 +3,27 @@
 <html lang="en">
 <head>
     <title>Signup</title>
+    <style>
+        .error { 
+            color: red; 
+        }
+        .success { 
+            color: green; 
+        }
+    </style>
 </head>
 <body> 
-        <form method="post" action="../controller/register.php" enctype="multipart/form-data">
-            Username:   <input type="text" name="username" value=""/> <br>
-            Password:   <input type="password" name="password" value=""/> <br>
-            Email:      <input type="email" name="email" value=""/> <br>
-                        <input type="submit" name="submit" value="Submit"/>
-                        <a href="login.php">Sign in</a>
-        </form>
+    <h2>Signup Form</h2>
+    <div id="response"></div>
+    <form method="post" onsubmit="return signup()" enctype="multipart/form-data">
+        Username:   <input type="text" id="username" name="username" value=""/> <br>
+        Password:   <input type="password" id="password" name="password" value=""/> <br>
+        Email:      <input type="email" id="email" name="email" value=""/> <br>
+                    <input type="submit" name="submit" value="Submit"/>
+                    <a href="login.php">Sign in</a>
+    </form>
+
+    <script src="../controller/register.js"></script>
+        
 </body>
 </html>
