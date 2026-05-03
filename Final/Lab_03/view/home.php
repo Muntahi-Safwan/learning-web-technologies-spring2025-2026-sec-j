@@ -13,7 +13,7 @@
 </head>
 <body>
         <h1>Welcome Home!<?php echo $_SESSION['username'];?></h1>
-        <a href='product_list.php'>User list</a> |
+        <a href='product_list.php'>Product list</a> |
         <a href='../controller/logout.php'>Logout</a>
 </body>
 </html>

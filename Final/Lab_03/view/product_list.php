@@ -17,10 +17,11 @@
 <body>
     
         <h1>List of Products</h1>
-        <a href='home.php'>back</a> |
-        <a href='createProductView.php'>Create Product</a> |
-        <a href='../controller/logout.php'>Logout</a>
+            <a href='home.php'>back</a> |
+            <a href='createProductView.php'>Create Product</a> |
+            <a href='../controller/logout.php'>Logout</a>
         <br>
+            <div id="response"></div>
 
         <table border=1>
         
@@ -41,9 +42,8 @@
                 <td><?=$product['description']?></td>
                 <td><?=$product['quantity']?></td>
                 <td>
-
                     <a href="edit.php?id=<?=$product['id']?>"> EDIT </a> | 
-                    <a href="../controller/deleteProduct.php?id=<?=$product['id']?>"> DELETE </a> | 
+                    <a href="#" onclick="return deleteProduct('<?=$product['id']?>')"> DELETE </a> | 
                     <a href="details.php?id=<?=$product['id']?>"> DETAILS </a> 
                 </td>
             </tr>
@@ -53,4 +53,5 @@
         </table>
 
 </body>
+<script src="../controller/product_list.js"></script>
 </html>

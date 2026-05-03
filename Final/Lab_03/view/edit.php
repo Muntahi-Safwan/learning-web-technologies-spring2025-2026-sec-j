@@ -25,15 +25,17 @@
         <a href='product_list.php'>back</a> |
         <a href='../controller/logout.php'>Logout</a>
         <br>
+        <div id="response"></div>
 
-        <form method="post" action="../controller/editProduct.php" enctype="multipart/form-data">
-            ID:             <input type="text" name="id" value="<?=$product['id']?>" readonly/> <br>
-            Name:           <input type="text" name="name" value="<?=$product['name']?>"/> <br>
-            Description:    <input type="text" name="description" value="<?=$product['description']?>"/> <br>
-            Price:          <input type="text" name="price" value="<?=$product['price']?>"/> <br>
-            Quantity:       <input type="text" name="quantity" value="<?=$product['quantity']?>"/> <br>
+        <form method="post" onsubmit="return updateProduct()" enctype="multipart/form-data">
+            ID:             <input type="text" id="id" name="id" value="<?=$product['id']?>" readonly/> <br>
+            Name:           <input type="text" id="name" name="name" value="<?=$product['name']?>"/> <br>
+            Description:    <input type="text" id="description" name="description" value="<?=$product['description']?>"/> <br>
+            Price:          <input type="text" id="price" name="price" value="<?=$product['price']?>"/> <br>
+            Quantity:       <input type="text" id="quantity" name="quantity" value="<?=$product['quantity']?>"/> <br>
                             <input type="submit" name="submit" value="Update"/>
                         
         </form>
+        <script src="../controller/editProduct.js"></script>
 </body>
 </html>

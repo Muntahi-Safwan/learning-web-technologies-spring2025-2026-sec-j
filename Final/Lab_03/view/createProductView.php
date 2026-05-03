@@ -26,15 +26,17 @@
         <a href='product_list.php'>back</a> |
         <a href='../controller/logout.php'>Logout</a>
         <br>
+        <div id="response"></div>
 
-        <form method="post" action="../controller/createProduct.php" enctype="multipart/form-data">
-            ID:             <input type="text" name="id" value="" /> <br>
-            Name:           <input type="text" name="name" value=""/> <br>
-            Description:    <input type="textfield" name="description" value=""/> <br>
-            Price:          <input type="text" name="price" value=""/> <br>
-            Quantity:       <input type="text" name="quantity" value=""/> <br>
+        <form method="post" onsubmit="return createProduct()" enctype="multipart/form-data">
+            ID:             <input type="text" id="id" name="id" value="" /> <br>
+            Name:           <input type="text" id="name" name="name" value=""/> <br>
+            Description:    <input type="textfield" id="description" name="description" value=""/> <br>
+            Price:          <input type="text" id="price" name="price" value=""/> <br>
+            Quantity:       <input type="text" id="quantity" name="quantity" value=""/> <br>
                             <input type="submit" name="submit" value="Create"/>
                         
         </form>
+        <script src="../controller/createProduct.js"></script>
 </body>
 </html>
